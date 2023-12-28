@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/places")
 public class PlaceController {
-    private PlaceService placesService;
+    private final PlaceService placesService;
     @Autowired
     PlaceController(PlaceService placesService) {
         this.placesService = placesService;
@@ -25,12 +25,10 @@ public class PlaceController {
     @GetMapping
     public ResponseEntity<PlaceResponse> getPlaces(@RequestParam double latitude, @RequestParam double longitude,
                                                    @RequestParam double radius) {
-        try {
+
             List<PlaceDto> places = placesService.getPlaces(latitude, longitude, radius);
             PlaceResponse placeResponse = new PlaceResponse(places);
             return ResponseEntity.ok(placeResponse);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
+
     }
 }

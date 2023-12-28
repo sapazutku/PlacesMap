@@ -18,6 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
+*.properties
 
 ### NetBeans ###
 /nbproject/private/
@@ -34,4 +35,4 @@ build/
 
 ## application properties ##
 /src/main/java/resources/
-!**/src/main/**/resources/application.properties
+resources/application.properties

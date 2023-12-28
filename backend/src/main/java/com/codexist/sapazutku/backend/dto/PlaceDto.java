@@ -34,8 +34,6 @@ public class PlaceDto {
         return place;
     }
 
-
-
     public LocationDto getLocation() {
         return location;
     }

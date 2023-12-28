@@ -1,6 +1,5 @@
 package com.codexist.sapazutku.backend.model;
 
-import com.codexist.sapazutku.backend.dto.PlaceDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,6 +24,10 @@ public class Place {
 
     @Column(name = "icon_color")
     private String iconBackgroundColor;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "response_id")
+    private Request response;
 
     public Place() {
     }
@@ -76,5 +79,9 @@ public class Place {
 
     public void setDisplayName(String text) {
         this.displayName = new DisplayName(text, "en");
+    }
+
+    public void setRequest(Request newRequest) {
+        this.response = newRequest;
     }
 }

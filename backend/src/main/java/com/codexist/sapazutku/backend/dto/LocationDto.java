@@ -3,13 +3,15 @@ package com.codexist.sapazutku.backend.dto;
 public class LocationDto {
     private double latitude;
     private double longitude;
+    private double radius;
 
     public LocationDto() {
     }
 
-    public LocationDto(double latitude, double longitude) {
+    public LocationDto(double latitude, double longitude, double radius) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.radius = radius;
     }
 
     public double getLatitude() {
@@ -26,5 +28,13 @@ public class LocationDto {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 }

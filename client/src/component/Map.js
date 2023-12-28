@@ -19,7 +19,10 @@ function Map() {
 
     const data = await response.json();
     console.log(data);
-    setPlaces(data.places);
+    if (data.length > 0) {
+        setPlaces(data.places);
+    }
+    
   };
   return (
     <div className="map-container">

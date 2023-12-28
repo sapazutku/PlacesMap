@@ -1,0 +1,6 @@
+spring:
+  web:
+    cors:
+      allowed-origins: "https://codexistcase.netlify.app, http://localhost:3000"
+      allowed-methods: "*"
+      allowed-headers: "*"

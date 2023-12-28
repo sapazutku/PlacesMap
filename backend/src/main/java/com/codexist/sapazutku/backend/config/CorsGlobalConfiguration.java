@@ -14,7 +14,11 @@ public class CorsGlobalConfiguration {
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("www.localhost:3000");
+        config.addAllowedOrigin("https://658da2f91f7c2b03fcf0def3--codexistcase.netlify.app/");
+        config.addAllowedOrigin("https://codexistcase.netlify.app/");
+        config.addAllowedOrigin("http://localhost:3000/");
+        config.addAllowedOrigin("https://calm-ground-0b381b51e-preview.westus2.4.azurestaticapps.net/");
+        config.addAllowedOrigin("https://wonderful-tree-0dda24310.4.azurestaticapps.net/");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
 

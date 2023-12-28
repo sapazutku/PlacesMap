@@ -14,7 +14,7 @@ function Map() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await fetch(
-      `http://localhost:8070/api/places?latitude=${latitude}&longitude=${longitude}&radius=${radius}`
+      `https://placeapi-utkucodexist.azuremicroservices.io/api/places?latitude=${latitude}&longitude=${longitude}&radius=${radius}`
     );
 
     const data = await response.json();

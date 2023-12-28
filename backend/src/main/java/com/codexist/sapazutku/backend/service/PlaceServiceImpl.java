@@ -90,7 +90,9 @@ public class PlaceServiceImpl implements PlaceService {
         List<PlaceDto> places = placeResponse.getPlaces();
         System.out.println("RESPONSE FROM API");
         // Save to db places and request
-
+        if (places == null) {
+            return Collections.emptyList();
+        }
         List<Place> placesToSave = places.stream()
                 .map(this::convertDtoToPlace)
                 .collect(Collectors.toList());

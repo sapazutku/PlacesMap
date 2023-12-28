@@ -2,6 +2,7 @@ package com.codexist.sapazutku.backend.service;
 
 import com.codexist.sapazutku.backend.config.WebClientConfig;
 import com.codexist.sapazutku.backend.dto.DisplayNameDto;
+import com.codexist.sapazutku.backend.dto.LocationDto;
 import com.codexist.sapazutku.backend.dto.PlaceDto;
 import com.codexist.sapazutku.backend.dto.PlaceResponse;
 import com.codexist.sapazutku.backend.model.DisplayName;
@@ -56,6 +57,12 @@ public class PlaceServiceImpl implements PlaceService {
                         placeDto.setIconMaskBaseUri(place.getIconMaskBaseUri());
                         placeDto.setIconBackgroundColor(place.getIconBackgroundColor());
                         placeDto.setPrimaryType(place.getPrimaryType());
+
+                        LocationDto locationDto = new LocationDto();
+                        locationDto.setLatitude(place.getLocation().getLatitude());
+                        locationDto.setLongitude(place.getLocation().getLongitude());
+                        locationDto.setRadius(place.getLocation().getRadius());
+                        placeDto.setLocation(locationDto);
                         return placeDto;
                     })
                     .toList();

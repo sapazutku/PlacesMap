@@ -19,8 +19,10 @@ function Map() {
 
     const data = await response.json();
     console.log(data);
-    if (data.length > 0) {
-        setPlaces(data.places);
+    if (Array.isArray(data.places) && data.places.length > 0) {
+      setPlaces(data.places);
+    } else {
+      setPlaces([]);
     }
     
   };
